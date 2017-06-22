@@ -9,10 +9,6 @@ ENV HOME /root
 ENV JENKINS_HOME /root/jenkins
 ENV JENKINS_VERSION 2.32.1
 
-# GitHub repository to store _Jenkins_ configuration
-ENV GITHUB_USERNAME antonfisher
-ENV GITHUB_CONFIG_REPOSITORY my-jenkins-config
-
 # Make _Jenkins_ home directory
 RUN mkdir -p $JENKINS_HOME
 
@@ -56,6 +52,10 @@ RUN echo "America/Los_Angeles" > /etc/timezone &&\
 # Configure git
 RUN git config --global user.email "jenkins@container" &&\
     git config --global user.name  "jenkins"
+
+# GitHub repository to store _Jenkins_ configuration
+ENV GITHUB_USERNAME tim-pl-m
+ENV GITHUB_CONFIG_REPOSITORY jenkins-pipeline
 
 # Clone _Jenkins_ config
 RUN cd /tmp &&\
