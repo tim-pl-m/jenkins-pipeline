@@ -18,11 +18,11 @@ ENV GITHUB_USERNAME tim-pl-m
 ENV GITHUB_CONFIG_REPOSITORY jenkins-pipeline
 
 # Clone _Jenkins_ config
-RUN cd /tmp &&\
-    # git clone git@github.com:$GITHUB_USERNAME/$GITHUB_CONFIG_REPOSITORY.git &&\
-    git clone https://github.com/tim-pl-m/jenkins-pipeline.git &&\
-    cp -r $GITHUB_CONFIG_REPOSITORY/jenkins_home/. $JENKINS_HOME &&\
-    rm -r /tmp/$GITHUB_CONFIG_REPOSITORY
+# RUN cd /tmp &&\
+#     # git clone git@github.com:$GITHUB_USERNAME/$GITHUB_CONFIG_REPOSITORY.git &&\
+#     git clone https://github.com/tim-pl-m/jenkins-pipeline.git &&\
+#     cp -r $GITHUB_CONFIG_REPOSITORY/jenkins_home/. $JENKINS_HOME &&\
+#     rm -r /tmp/$GITHUB_CONFIG_REPOSITORY
 
 # Jenkins is run with user `jenkins`, uid = 1000
 # If you bind mount a volume from the host or a data container,
