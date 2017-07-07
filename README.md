@@ -164,7 +164,8 @@ cd images/master
 # log in with docker:jenkins
 #TODO check if password wasnt changed
 
-
+# TODO add script at root levelto start jenkins after instance restart/add jenkins as docker-service:
+sh jenkins-in-docker/images/master/bin/container-rerun.sh
 
 
 ```
@@ -184,10 +185,14 @@ docker-compose up -d
 
 sources:
 
+pipeline:
+https://jenkins.io/doc/book/pipeline/syntax/
+
+jenkins-config:
 https://antonfisher.com/posts/2017/01/16/run-jenkins-in-docker-container-with-persistent-configuration/
 https://gist.github.com/cenkalti/5089392
 
-
+backround info:
 https://engineering.riotgames.com/news/docker-jenkins-data-persists
 https://github.com/dockersamples/docker-swarm-visualizer
 http://jpetazzo.github.io/orchestration-workshop/#1
